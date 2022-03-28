@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
     res.render("employee/addOrEdit", {
-        viewTitle: "Insert Employee"
+        viewTitle: "NHAP THONG TIN SINH VIEN"
     })
 })
 
@@ -33,7 +33,7 @@ function insertRecord(req, res) {
             if (err.name == "ValidationError") {
                 handleValidationError(err, req.body);
                 res.render("employee/addOrEdit", {
-                    viewTitle: "Insert Employee",
+                    viewTitle: "NHAP THONG TIN SINH VIEN",
                     employee: req.body
                 })
             }
