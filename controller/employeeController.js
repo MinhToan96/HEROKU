@@ -27,7 +27,7 @@ function insertRecord(req, res) {
 
     employee.save((err, doc) => {
         if (!err) {
-            res.redirect('employee/list');
+            res.redirect('/list');
         }
         else {
             if (err.name == "ValidationError") {
@@ -45,7 +45,7 @@ function insertRecord(req, res) {
 function updateRecord(req, res) {
     Employee.findOneAndUpdate({ _id: req.body._id, }, req.body, { new: true }, (err, doc) => {
         if (!err) {
-            res.redirect('employee/list');
+            res.redirect('/list');
         }
         else {
             if (err.name == "ValidationError") {
@@ -86,7 +86,7 @@ router.get('/:id', (req, res) => {
 router.get('/delete/:id', (req, res) => {
     Employee.findByIdAndRemove(req.params.id, (err, doc) => {
         if (!err) {
-            res.redirect('/employee/list');
+            res.redirect('/list');
         }
         else {
             console.log("An error occured during the Delete Process" + err);
