@@ -19,8 +19,8 @@ var employeeSchema = new mongoose.Schema({
 
 // custom validation for email
 
-employeeSchema.path('nxb').validate((val) => {
-    return validator.validate(val);
-}, 'Invalid NXB');
+// employeeSchema.path('email').validate((val) => {
+//     return validator.validate(val);
+// }, 'Invalid Email');
 
 mongoose.model('Employee', employeeSchema);

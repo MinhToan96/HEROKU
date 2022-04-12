@@ -101,8 +101,8 @@ function handleValidationError(err, body) {
                 body['fullNameError'] = err.errors[field].message;
                 break;
 
-            // case 'email':
-            //     body['emailError'] = err.errors[field].message;
+            // case 'nxb':
+            //     body['nxbError'] = err.errors[field].message;
             //     break;
 
             default:
