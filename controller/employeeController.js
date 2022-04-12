@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
     res.render("employee/addOrEdit", {
-        viewTitle: "NHAP THONG TIN SINH VIEN"
+        viewTitle: "NHẬP THÔNG TIN SINH VIÊN"
     })
 })
 
@@ -33,11 +33,11 @@ function insertRecord(req, res) {
             if (err.name == "ValidationError") {
                 handleValidationError(err, req.body);
                 res.render("employee/addOrEdit", {
-                    viewTitle: "NHAP THONG TIN SINH VIEN",
+                    viewTitle: "NHẬP THÔNG TIN SINH VIÊN",
                     employee: req.body
                 })
             }
-            console.log("Error occured during record insertion" + err);
+            console.log("Đã xảy ra lỗi khi chèn bản ghi" + err);
         }
     })
 }
@@ -89,7 +89,7 @@ router.get('/delete/:id', (req, res) => {
             res.redirect('/list');
         }
         else {
-            console.log("An error occured during the Delete Process" + err);
+            console.log("Đã xãy ra lỗi trong quá trình nhập" + err);
         }
     })
 })
