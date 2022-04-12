@@ -14,7 +14,10 @@ var employeeSchema = new mongoose.Schema({
     },
     soluong: {
         type: String
-    }
+    },
+    gia: {
+        type: String
+    },
 })
 
 // custom validation for email

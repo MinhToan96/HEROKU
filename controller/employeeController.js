@@ -24,6 +24,7 @@ function insertRecord(req, res) {
     employee.nxb = req.body.nxb;
     employee.tacgia = req.body.tacgia;
     employee.soluong = req.body.soluong;
+    employee.gia = req.body.gia;
 
     employee.save((err, doc) => {
         if (!err) {
