@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
     res.render("employee/addOrEdit", {
-        viewTitle: "NHẬP THÔNG TIN SINH VIÊN"
+        viewTitle: "NHẬP SÁCH MỚI VÀO CỬA HÀNG"
     })
 })
 
@@ -21,9 +21,9 @@ router.post("/", (req, res) => {
 function insertRecord(req, res) {
     var employee = new Employee();
     employee.fullName = req.body.fullName;
-    employee.email = req.body.email;
-    employee.city = req.body.city;
-    employee.mobile = req.body.mobile;
+    employee.nxb = req.body.nxb;
+    employee.tacgia = req.body.tacgia;
+    employee.soluong = req.body.soluong;
 
     employee.save((err, doc) => {
         if (!err) {
@@ -33,7 +33,7 @@ function insertRecord(req, res) {
             if (err.name == "ValidationError") {
                 handleValidationError(err, req.body);
                 res.render("employee/addOrEdit", {
-                    viewTitle: "NHẬP THÔNG TIN SINH VIÊN",
+                    viewTitle: "NHẬP SÁCH MỚI VÀO CỬA HÀNG",
                     employee: req.body
                 })
             }
@@ -101,9 +101,9 @@ function handleValidationError(err, body) {
                 body['fullNameError'] = err.errors[field].message;
                 break;
 
-            case 'email':
-                body['emailError'] = err.errors[field].message;
-                break;
+            // case 'email':
+            //     body['emailError'] = err.errors[field].message;
+            //     break;
 
             default:
                 break;

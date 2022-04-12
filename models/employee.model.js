@@ -6,21 +6,21 @@ var employeeSchema = new mongoose.Schema({
         type: String,
         required: 'This field is required'
     },
-    email: {
+    nxb: {
         type: String
     },
-    mobile: {
+    tacgia: {
         type: String
     },
-    city: {
+    soluong: {
         type: String
     }
 })
 
 // custom validation for email
 
-employeeSchema.path('email').validate((val) => {
+employeeSchema.path('nxb').validate((val) => {
     return validator.validate(val);
-}, 'Invalid Email');
+}, 'Invalid NXB');
 
 mongoose.model('Employee', employeeSchema);

@@ -2,15 +2,15 @@
     <a href="/" class="btn btn-danger">
         <i class="fa fa-plus"> </i> Mới
     </a>
-    DANH SÁCH SINH VIÊN
+    NHẬP SÁCH MỚI VÀO CỬA HÀNG
 </h3>
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Họ Tên</th>
-            <th>Email</th>
-            <th>SĐT</th>
-            <th>Thành Phố</th>
+            <th>Tên Sách</th>
+            <th>NXB</th>
+            <th>Tác Giả</th>
+            <th>Số Lượng</th>
             <th></th>
         </tr>
     </thead>
@@ -18,9 +18,9 @@
         {{#each list}}
         <tr>
             <td>{{this.fullName}}</td>
-            <td>{{this.email}}</td>
-            <td>{{this.mobile}}</td>
-            <td>{{this.city}}</td>
+            <td>{{this.nxb}}</td>
+            <td>{{this.tacgia}}</td>
+            <td>{{this.soluong}}</td>
             <td>
                 <a href="/{{this._id}}">
                     <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
